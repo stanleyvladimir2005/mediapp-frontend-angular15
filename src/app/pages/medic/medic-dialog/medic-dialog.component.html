@@ -1,0 +1,40 @@
+<mat-dialog-content>
+  <mat-toolbar>
+    <span>Medic Dialog</span>
+  </mat-toolbar>
+
+   <div>
+    <mat-form-field>
+      <input matInput placeholder="First Name" [(ngModel)]="medic.firstName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Last Name" [(ngModel)]="medic.lastName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Dui" [(ngModel)]="medic.dui" max="9" maxlength="9">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Phone" [(ngModel)]="medic.phone" max="8" maxlength="8">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="medic.email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="status" [(ngModel)]="medic.status">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Photo" [(ngModel)]="medic.photo">
+    </mat-form-field>
+
+    <img mat-card-image [src]="medic.photo" width="50%" height="50%" *ngIf="medic.photo">
+  </div>
+
+  <button mat-raised-button color="primary" (click)="operate()">Done</button>
+  <button mat-raised-button color="accent" (click)="close()">Cancel</button>
+</mat-dialog-content>
