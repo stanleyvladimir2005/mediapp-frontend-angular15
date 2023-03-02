@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <mat-toolbar>
+    <span>Exam Dialog</span>
+  </mat-toolbar>
+
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Exam Name" [(ngModel)]="exam.examName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Description" [(ngModel)]="exam.description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Status" [(ngModel)]="exam.status">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" (click)="operate()">Done</button>
+  <button mat-raised-button color="accent" (click)="close()">Cancel</button>
+</mat-dialog-content>

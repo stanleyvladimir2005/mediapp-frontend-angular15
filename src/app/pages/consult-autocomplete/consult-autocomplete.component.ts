@@ -130,7 +130,7 @@ export class ConsultAutocompleteComponent implements OnInit{
     consult.patient = this.form.value['patient'];
     consult.medic = this.form.value['medic'];
     consult.specialty = this.form.value['specialty'];
-    consult.numConsult = "C1";
+    consult.numberConsult = "C1";
     consult.details = this.details;
     consult.consultDate = moment(this.form.value['consultDate']).format('YYYY-MM-DDTHH:mm:ss');
 

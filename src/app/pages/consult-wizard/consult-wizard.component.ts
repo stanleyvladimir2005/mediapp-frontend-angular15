@@ -124,7 +124,7 @@ export class ConsultWizardComponent implements OnInit{
     consult.patient = this.firstFormGroup.value['patient'];
     consult.medic = this.medicSelected;
     consult.specialty = this.firstFormGroup.value['specialty'];;
-    consult.numConsult = `C${this.consultSelected}`;
+    consult.numberConsult = `C${this.consultSelected}`;
     consult.details = this.details;
     consult.consultDate = moment(this.firstFormGroup.value['consultDate']).format('YYYY-MM-DDTHH:mm:ss');
 

@@ -3,10 +3,11 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {Specialty} from "../../model/specialty";
-import {ActivatedRoute} from "@angular/router";
 import {SpecialtyService} from "../../service/specialty.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {switchMap} from "rxjs";
+import {MatDialog} from "@angular/material/dialog";
+import {SpecialtyDialogComponent} from "./specialty-dialog/specialty-dialog.component";
 
 @Component({
   selector: 'app-specialty',
@@ -21,7 +22,7 @@ export class SpecialtyComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    private route: ActivatedRoute,
+    private _dialog: MatDialog,
     private snackBar: MatSnackBar,
     private specialtyService: SpecialtyService
   ) { }
@@ -61,7 +62,11 @@ export class SpecialtyComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  checkChildren(): boolean{
-    return this.route.children.length != 0;
+  openDialog(specialty?: Specialty){
+    this._dialog.open(SpecialtyDialogComponent  , {
+      width: '300px',
+      data: specialty,
+      disableClose: true
+    });
   }
 }

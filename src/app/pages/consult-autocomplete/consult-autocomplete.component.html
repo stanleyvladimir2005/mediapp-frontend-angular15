@@ -5,7 +5,7 @@
 <form class="example-container" [formGroup]="form" (submit)="save()">
 
   <mat-form-field>
-    <input matInput placeholder="Patient" [matAutocomplete]="autoPatient" [formControl]="patientControl" formControlName="patient">
+    <input matInput placeholder="Select Patient" [matAutocomplete]="autoPatient" [formControl]="patientControl" formControlName="patient">
     <mat-autocomplete #autoPatient="matAutocomplete" [displayWith]="showPatient">
       <mat-option *ngFor="let p of patientsFiltered$ | async" [value]="p">
         {{p.firstName}} {{p.lastName}}
@@ -14,7 +14,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Medic" [matAutocomplete]="autoMedic" [formControl]="medicControl" formControlName="medic">
+    <input matInput placeholder="Select Medic" [matAutocomplete]="autoMedic" [formControl]="medicControl" formControlName="medic">
     <mat-autocomplete #autoMedic="matAutocomplete" [displayWith]="showMedic">
       <mat-option *ngFor="let m of medicsFiltered$ | async" [value]="m">
         {{m.firstName}} {{m.lastName}}

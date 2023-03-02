@@ -7,6 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {ExamService} from "../../service/exam.service";
 import {switchMap} from "rxjs";
+import {ExamDialogComponent} from "./exam-dialog/exam-dialog.component";
 
 @Component({
   selector: 'app-exam',
@@ -21,7 +22,7 @@ export class ExamComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    private dialog: MatDialog,
+    private _dialog: MatDialog,
     private snackBar: MatSnackBar,
     private examService: ExamService
   ) { }
@@ -32,7 +33,7 @@ export class ExamComponent implements OnInit {
     });
 
     this.examService.getMessageChange().subscribe(data => {
-      this.snackBar.open(data, 'INFO', { duration: 2000, verticalPosition: "top", horizontalPosition: "right" });
+      this.snackBar.open(data, 'INFO', { duration: 2000 /*, verticalPosition: "top", horizontalPosition: "right"*/ });
     });
 
     this.examService.findAll().subscribe(data => {
@@ -40,8 +41,22 @@ export class ExamComponent implements OnInit {
     });
   }
 
+  createTable(exams: Exam[]){
+    this.dataSource = new MatTableDataSource(exams);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
   applyFilter(e: any) {
     this.dataSource.filter = e.target.value.trim().toLowerCase();
+  }
+
+  openDialog(exam?: Exam){
+    this._dialog.open(ExamDialogComponent  , {
+      width: '300px',
+      data: exam,
+      disableClose: true
+    });
   }
 
   delete(idExam: number){
@@ -53,11 +68,5 @@ export class ExamComponent implements OnInit {
         this.examService.setMessageChange('DELETED!');
       })
     ;
-  }
-
-  createTable(exams: Exam[]){
-    this.dataSource = new MatTableDataSource(exams);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 }

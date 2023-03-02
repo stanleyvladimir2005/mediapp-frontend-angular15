@@ -25,14 +25,14 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="status" [(ngModel)]="medic.status">
+      <input matInput placeholder="Status" [(ngModel)]="medic.status">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Photo" [(ngModel)]="medic.photo">
+      <input matInput placeholder="Photo" [(ngModel)]="medic.photoUrl">
     </mat-form-field>
 
-    <img mat-card-image [src]="medic.photo" width="50%" height="50%" *ngIf="medic.photo">
+    <img mat-card-image [src]="medic.photoUrl" width="50%" height="50%" *ngIf="medic.photoUrl">
   </div>
 
   <button mat-raised-button color="primary" (click)="operate()">Done</button>

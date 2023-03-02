@@ -9,6 +9,6 @@ export class Consult{
     medic: Medic;
     specialty: Specialty;
     consultDate: string;
-    numConsult: string;
+    numberConsult: string;
     details: ConsultDetail[];
 }

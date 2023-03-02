@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <mat-toolbar>
+    <span>Specialty Dialog</span>
+  </mat-toolbar>
+
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Specialty Name" [(ngModel)]="specialty.specialtyName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Description" [(ngModel)]="specialty.description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Status" [(ngModel)]="specialty.status">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" (click)="operate()">Done</button>
+  <button mat-raised-button color="accent" (click)="close()">Cancel</button>
+</mat-dialog-content>

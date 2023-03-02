@@ -16,7 +16,6 @@ export class ReportComponent implements OnInit {
   doughnutType: ChartType = 'doughnut';
   radarType: ChartType = 'radar';
   pieType: ChartType = 'pie';
-
   pdfSrc: string;
   filename: string;
   selectedFiles: FileList;
@@ -41,8 +40,6 @@ export class ReportComponent implements OnInit {
     reader.readAsDataURL(data);
     reader.onloadend = () => {
       const base64 = reader.result;
-      //console.log(base64);
-      //this.imageData = base64;
       this.applySanitizer(base64);
     }
   }
@@ -53,12 +50,8 @@ export class ReportComponent implements OnInit {
 
   draw() {
     this.consultService.callProcedureOrFunction().subscribe((data) => {
-      const dates = data.map((x) => x.consultDate);
+      const dates = data.map((x) => x.consultdate);
       const quantities = data.map((x) => x.quantity);
-
-      //console.log(dates);
-      //console.log(quantites);
-
       this.chart = new Chart('canvas', {
         type: this.type,
         data: {
@@ -119,7 +112,6 @@ export class ReportComponent implements OnInit {
     this.draw();
   }
 
-  //PDFS
   viewReport(){
     this.consultService.generateReport().subscribe(data => {
       this.pdfSrc = window.URL.createObjectURL(data);

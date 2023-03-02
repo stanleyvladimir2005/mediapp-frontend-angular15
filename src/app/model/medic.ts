@@ -5,6 +5,6 @@ export class Medic{
   dui: string;
   phone: string;
   email: string;
-  photo: string;
+  photoUrl: string;
   status:boolean;
 }

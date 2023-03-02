@@ -38,6 +38,7 @@ export class MedicDialogComponent implements OnInit {
       this.medicService.save(this.medic)
         .pipe(switchMap( ()=> this.medicService.findAll()))
         .subscribe(data => {
+          console.log(data);
           this.medicService.setMedicChange(data);
           this.medicService.setMessageChange('CREATED!')
         });

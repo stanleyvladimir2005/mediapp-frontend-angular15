@@ -75,12 +75,12 @@
       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%">
         <mat-card *ngFor="let m of medics">
           <mat-card-header>
-            <img mat-card-avatar [src]="m.photo" alt="Avatar of medic">
+            <img mat-card-avatar [src]="m.photoUrl" alt="Avatar of medic">
             <mat-card-title [ngClass]="medicSelected == m ? 'medicCSS' : ''" >{{m.firstName}} {{m.lastName}}</mat-card-title>
             <mat-card-subtitle>{{m.dui}}</mat-card-subtitle>
           </mat-card-header>
 
-          <img mat-card-image alt="Phoyo of medic" [src]="m.photo" style="cursor: pointer;" width="300" height="400" (click)="selectMedic(m)">
+          <img mat-card-image alt="Phoyo of medic" [src]="m.photoUrl" style="cursor: pointer;" width="300" height="400" (click)="selectMedic(m)">
 
           <mat-card-content>
             <p>This is medic {{ m.firstName }} {{ m.lastName }}</p>

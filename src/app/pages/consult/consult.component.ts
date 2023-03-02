@@ -99,13 +99,9 @@ export class ConsultComponent implements OnInit{
     consult.patient = patient
     consult.medic = medic;
     consult.specialty = specialty;
-    consult.numConsult = "C1";
+    consult.numberConsult = "C1";
     consult.details = this.details;
-
-    /*let tzoffset = (new Date()).getTimezoneOffset() * 60000;
-    let localISOTime = (new Date(this.dateSelected.getTime() - tzoffset)).toISOString();*/
-
-    consult.consultDate = moment(this.dateSelected).format('YYYY-MM-DDTHH:mm:ss');
+        consult.consultDate = moment(this.dateSelected).format('YYYY-MM-DDTHH:mm:ss');
 
     const dto: consultListExamDTOI = {
       consult: consult,

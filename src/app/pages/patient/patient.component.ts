@@ -6,6 +6,8 @@ import {MatSort} from "@angular/material/sort";
 import {PatientService} from "../../service/patient.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {switchMap} from "rxjs";
+import {PatientDialogComponent} from "./patient-dialog/patient-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-patient',
@@ -16,18 +18,16 @@ export class PatientComponent implements OnInit{
 
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'dui', 'actions'];
   dataSource: MatTableDataSource<Patient>;
-
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     private patientService: PatientService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _dialog: MatDialog
   ){ }
 
   ngOnInit(): void {
-
-    //RECUPERAR LOS DATOS DE LA VARIABLE REACTIVA SE INVOCA SOLO CUANDO SE DETECTA UN NEXT
     this.patientService.getPatientChange().subscribe(data => {
       this.createTable(data);
     });
@@ -59,6 +59,13 @@ export class PatientComponent implements OnInit{
         this.patientService.setPatientChange(data);
         this.patientService.setMessageChange("DELETED!");
       });
-    ;
+  }
+
+  openDialog(patient?: Patient){
+    this._dialog.open(PatientDialogComponent  , {
+      width: '400px',
+      data: patient,
+      disableClose: true
+    });
   }
 }

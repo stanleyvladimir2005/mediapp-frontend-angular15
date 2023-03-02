@@ -28,7 +28,6 @@ export class MedicComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.medicService.getMedicChange().subscribe(data => {
       this.createTable(data);
     });
@@ -54,7 +53,7 @@ export class MedicComponent implements OnInit {
 
   openDialog(medic?: Medic){
     this._dialog.open(MedicDialogComponent  , {
-      width: '500px',
+      width: '400px',
       data: medic,
       disableClose: true
     });
