@@ -19,6 +19,11 @@ import {MatNativeDateModule, DateAdapter, MAT_DATE_LOCALE} from "@angular/materi
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatListModule} from "@angular/material/list";
 import {CustomDateAdapter} from "./custom-adapter";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatCardModule} from "@angular/material/card";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [],
@@ -43,7 +48,12 @@ import {CustomDateAdapter} from "./custom-adapter";
     MatDatepickerModule,
     MatNativeDateModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatAutocompleteModule,
+    MatStepperModule,
+    MatCardModule,
+    MatGridListModule,
+    MatTabsModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES'},
