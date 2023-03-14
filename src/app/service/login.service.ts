@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 
@@ -33,5 +33,22 @@ export class LoginService {
   isLogged() {
     let token = sessionStorage.getItem(environment.TOKEN_NAME);
     return token != null;
+  }
+
+  ///send mail from backend
+  sendMail(username: string) {
+    return this.http.post<number>(`${environment.HOST}/mail/sendMail`, username, {
+      headers: new HttpHeaders().set('Content-Type', 'text/plain')
+    });
+  }
+
+  checkTokenReset(random: string) {
+    return this.http.get<number>(`${environment.HOST}/mail/reset/check/${random}`);
+  }
+
+  reset(random: string, newPassword: string) {
+    return this.http.post(`${environment.HOST}/mail/reset/${random}`, newPassword, {
+      headers: new HttpHeaders().set('Content-Type', 'text/plain')
+    });
   }
 }

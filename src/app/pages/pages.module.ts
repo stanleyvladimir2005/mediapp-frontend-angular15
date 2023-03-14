@@ -24,6 +24,8 @@ import { LayoutComponent } from './layout/layout.component';
 import {PatientDialogComponent} from "./patient/patient-dialog/patient-dialog.component";
 import {ExamDialogComponent} from "./exam/exam-dialog/exam-dialog.component";
 import {SpecialtyDialogComponent} from "./specialty/specialty-dialog/specialty-dialog.component";
+import { ForgotComponent } from './login/forgot/forgot.component';
+import { RandomComponent } from './login/forgot/random/random.component';
 
 @NgModule({
   imports: [
@@ -56,6 +58,8 @@ import {SpecialtyDialogComponent} from "./specialty/specialty-dialog/specialty-d
     DashboardComponent,
     Not403Component,
     Not404Component,
+    ForgotComponent,
+    RandomComponent,
   ],
   providers: [],
 })
