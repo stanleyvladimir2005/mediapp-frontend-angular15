@@ -26,6 +26,8 @@ import {ExamDialogComponent} from "./exam/exam-dialog/exam-dialog.component";
 import {SpecialtyDialogComponent} from "./specialty/specialty-dialog/specialty-dialog.component";
 import { ForgotComponent } from './login/forgot/forgot.component';
 import { RandomComponent } from './login/forgot/random/random.component';
+import { SingComponent } from './sing/sing.component';
+import { SingDialogComponent } from './sing/sing-dialog/sing-dialog.component';
 
 @NgModule({
   imports: [
@@ -60,6 +62,8 @@ import { RandomComponent } from './login/forgot/random/random.component';
     Not404Component,
     ForgotComponent,
     RandomComponent,
+    SingComponent,
+    SingDialogComponent,
   ],
   providers: [],
 })

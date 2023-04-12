@@ -1,3 +1,5 @@
+import {Sing} from "./sing";
+
 export class Patient{
     idPatient:number;
     firstName:string;
@@ -6,5 +8,6 @@ export class Patient{
     address:string;
     phone:string;
     email:string;
+    singList: Sing[];
     status:boolean;
 }

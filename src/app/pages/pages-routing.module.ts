@@ -12,10 +12,12 @@ import { PatientComponent } from './patient/patient.component';
 import { ReportComponent } from './report/report.component';
 import { SearchComponent } from './search/search.component';
 import { SpecialtyComponent } from './specialty/specialty.component';
+import { SingComponent } from "./sing/sing.component";
 
 export const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent, canActivate: [GuardService]},
     {path: 'patient', component: PatientComponent, canActivate: [GuardService] },
+    {path: 'sing', component: SingComponent, canActivate: [GuardService] },
     {path: 'exam', component: ExamComponent, canActivate: [GuardService] },
     {path: 'specialty', component: SpecialtyComponent, canActivate: [GuardService] },
     {path: 'medic', component: MedicComponent, canActivate: [GuardService] },

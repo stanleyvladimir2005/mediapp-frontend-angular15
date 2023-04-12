@@ -40,7 +40,6 @@ export class ConsultWizardComponent implements OnInit{
   consults: number[] = [];
   consultSelected: number;
 
-
   constructor(
     private patientService: PatientService,
     private medicService: MedicService,
@@ -123,7 +122,7 @@ export class ConsultWizardComponent implements OnInit{
     let consult = new Consult();
     consult.patient = this.firstFormGroup.value['patient'];
     consult.medic = this.medicSelected;
-    consult.specialty = this.firstFormGroup.value['specialty'];;
+    consult.specialty = this.firstFormGroup.value['specialty'];
     consult.numberConsult = `C${this.consultSelected}`;
     consult.details = this.details;
     consult.consultDate = moment(this.firstFormGroup.value['consultDate']).format('YYYY-MM-DDTHH:mm:ss');

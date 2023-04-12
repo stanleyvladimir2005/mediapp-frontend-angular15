@@ -69,7 +69,6 @@ export class ConsultComponent implements OnInit{
     let det = new ConsultDetail();
     det.diagnosis = this.diagnosis;
     det.treatment = this.treatment;
-
     this.details.push(det);
   }
 
@@ -101,7 +100,7 @@ export class ConsultComponent implements OnInit{
     consult.specialty = specialty;
     consult.numberConsult = "C1";
     consult.details = this.details;
-        consult.consultDate = moment(this.dateSelected).format('YYYY-MM-DDTHH:mm:ss');
+    consult.consultDate = moment(this.dateSelected).format('YYYY-MM-DDTHH:mm:ss');
 
     const dto: consultListExamDTOI = {
       consult: consult,
