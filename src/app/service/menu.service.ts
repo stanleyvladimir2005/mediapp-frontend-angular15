@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Menu} from "../model/menu";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Subject} from "rxjs";
 import {GenericService} from "./generic.service";

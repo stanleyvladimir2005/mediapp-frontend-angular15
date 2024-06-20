@@ -12,7 +12,7 @@ import { ReportComponent } from './report/report.component';
 import { SearchDialogComponent } from './search/search-dialog/search-dialog.component';
 import { SearchComponent } from './search/search.component';
 import { SpecialtyComponent } from './specialty/specialty.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from 'ngx-flexible-layout';
@@ -29,42 +29,35 @@ import { RandomComponent } from './login/forgot/random/random.component';
 import { SingComponent } from './sing/sing.component';
 import { SingDialogComponent } from './sing/sing-dialog/sing-dialog.component';
 
-@NgModule({
-  imports: [
-    CommonModule,
-    MaterialModule,
-    HttpClientModule,
-    PdfViewerModule,
-    ReactiveFormsModule,
-    FormsModule,
-    FlexLayoutModule,
-    PagesRoutingModule
-  ],
-  exports: [],
-  declarations: [
-    PatientComponent,
-    PatientDialogComponent,
-    MedicComponent,
-    MedicDialogComponent,
-    ExamComponent,
-    ExamDialogComponent,
-    SpecialtyComponent,
-    SpecialtyDialogComponent,
-    ConsultComponent,
-    ConsultAutocompleteComponent,
-    ConsultWizardComponent,
-    SearchComponent,
-    SearchDialogComponent,
-    ReportComponent,
-    LayoutComponent,
-    DashboardComponent,
-    Not403Component,
-    Not404Component,
-    ForgotComponent,
-    RandomComponent,
-    SingComponent,
-    SingDialogComponent,
-  ],
-  providers: [],
-})
+@NgModule({ exports: [],
+    declarations: [
+        PatientComponent,
+        PatientDialogComponent,
+        MedicComponent,
+        MedicDialogComponent,
+        ExamComponent,
+        ExamDialogComponent,
+        SpecialtyComponent,
+        SpecialtyDialogComponent,
+        ConsultComponent,
+        ConsultAutocompleteComponent,
+        ConsultWizardComponent,
+        SearchComponent,
+        SearchDialogComponent,
+        ReportComponent,
+        LayoutComponent,
+        DashboardComponent,
+        Not403Component,
+        Not404Component,
+        ForgotComponent,
+        RandomComponent,
+        SingComponent,
+        SingDialogComponent,
+    ], imports: [CommonModule,
+        MaterialModule,
+        PdfViewerModule,
+        ReactiveFormsModule,
+        FormsModule,
+        FlexLayoutModule,
+        PagesRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class PagesModule { }
