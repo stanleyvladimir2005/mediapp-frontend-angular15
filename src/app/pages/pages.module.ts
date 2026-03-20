@@ -12,10 +12,9 @@ import { ReportComponent } from './report/report.component';
 import { SearchDialogComponent } from './search/search-dialog/search-dialog.component';
 import { SearchComponent } from './search/search.component';
 import { SpecialtyComponent } from './specialty/specialty.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from 'ngx-flexible-layout';
+import { FlexLayoutModule } from '@ngbracket/ngx-layout';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Not403Component } from './not403/not403.component';
 import {PagesRoutingModule} from "./pages-routing.module";
@@ -59,5 +58,5 @@ import { SingDialogComponent } from './sing/sing-dialog/sing-dialog.component';
         ReactiveFormsModule,
         FormsModule,
         FlexLayoutModule,
-        PagesRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        PagesRoutingModule] })
 export class PagesModule { }

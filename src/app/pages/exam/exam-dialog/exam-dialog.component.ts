@@ -5,7 +5,7 @@ import {ExamService} from "../../../service/exam.service";
 import {Exam} from "../../../model/exam";
 
 @Component({
-  selector: 'app-exam-dialog',
+    standalone: false,
   templateUrl: './exam-dialog.component.html',
   styleUrls: ['./exam-dialog.component.css']
 })
@@ -48,3 +48,4 @@ export class ExamDialogComponent implements OnInit {
     this._dialogRef.close();
   }
 }
+

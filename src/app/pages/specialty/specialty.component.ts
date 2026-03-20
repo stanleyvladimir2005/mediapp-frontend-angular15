@@ -10,7 +10,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {SpecialtyDialogComponent} from "./specialty-dialog/specialty-dialog.component";
 
 @Component({
-  selector: 'app-specialty',
+    standalone: false,
   templateUrl: './specialty.component.html',
   styleUrls: ['./specialty.component.css']
 })
@@ -70,3 +70,4 @@ export class SpecialtyComponent implements OnInit {
     });
   }
 }
+

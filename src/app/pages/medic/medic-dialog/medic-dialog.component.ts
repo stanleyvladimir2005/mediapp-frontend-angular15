@@ -5,7 +5,7 @@ import {MedicService} from "../../../service/medic.service";
 import {switchMap} from "rxjs";
 
 @Component({
-  selector: 'app-medic-dialog',
+    standalone: false,
   templateUrl: './medic-dialog.component.html',
   styleUrls: ['./medic-dialog.component.css']
 })
@@ -50,3 +50,4 @@ export class MedicDialogComponent implements OnInit {
     this._dialogRef.close();
   }
 }
+

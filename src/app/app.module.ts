@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from './pages/login/login.component';
 import {environment} from "../environments/environment";
@@ -23,6 +23,7 @@ export function tokenGetter() {
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        HttpClientModule,
         MaterialModule,
         ReactiveFormsModule,
         FormsModule,
@@ -40,7 +41,6 @@ export function tokenGetter() {
         },
         {
             provide: LocationStrategy, useClass: HashLocationStrategy
-        },
-        provideHttpClient(withInterceptorsFromDi())
+        }
     ] })
 export class AppModule { }

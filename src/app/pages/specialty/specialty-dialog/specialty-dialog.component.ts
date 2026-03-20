@@ -5,7 +5,7 @@ import {Specialty} from "../../../model/specialty";
 import {SpecialtyService} from "../../../service/specialty.service";
 
 @Component({
-  selector: 'app-specialty-dialog',
+    standalone: false,
   templateUrl: './specialty-dialog.component.html',
   styleUrls: ['./specialty-dialog.component.css']
 })
@@ -47,3 +47,4 @@ export class SpecialtyDialogComponent implements OnInit {
     this._dialogRef.close();
   }
 }
+

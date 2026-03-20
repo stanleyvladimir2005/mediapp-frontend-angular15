@@ -17,7 +17,7 @@ import * as moment from 'moment';
 import { ConsultListExamDTO } from 'src/app/dto/consultListExamDTO';
 
 @Component({
-  selector: 'app-consult-autocomplete',
+    standalone: false,
   templateUrl: './consult-autocomplete.component.html',
   styleUrls: ['./consult-autocomplete.component.css']
 })
@@ -155,3 +155,4 @@ export class ConsultAutocompleteComponent implements OnInit{
     this.examsSelected = [];
   }
 }
+

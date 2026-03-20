@@ -16,7 +16,7 @@ import {Consult} from "../../model/consult";
 import * as moment from 'moment';
 
 @Component({
-  selector: 'app-consult',
+    standalone: false,
   templateUrl: './consult.component.html',
   styleUrls: ['./consult.component.css']
 })
@@ -128,3 +128,4 @@ export class ConsultComponent implements OnInit{
     this.examsSelected = [];
   }
 }
+

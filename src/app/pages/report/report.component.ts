@@ -5,7 +5,7 @@ import Chart from 'chart.js/auto';
 import { ConsultService } from 'src/app/service/consult.service';
 
 @Component({
-  selector: 'app-report',
+    standalone: false,
   templateUrl: './report.component.html',
   styleUrls: ['./report.component.css']
 })
@@ -142,3 +142,4 @@ export class ReportComponent implements OnInit {
     }
   }
 }
+

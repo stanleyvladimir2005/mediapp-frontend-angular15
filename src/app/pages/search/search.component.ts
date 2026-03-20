@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SearchDialogComponent } from './search-dialog/search-dialog.component';
 
 @Component({
-  selector: 'app-search',
+    standalone: false,
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
@@ -84,3 +84,4 @@ export class SearchComponent implements OnInit{
     });
   }
 }
+

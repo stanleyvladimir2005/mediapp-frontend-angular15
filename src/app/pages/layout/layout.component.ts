@@ -4,7 +4,7 @@ import {MenuService} from "../../service/menu.service";
 import {Menu} from "../../model/menu";
 
 @Component({
-  selector: 'app-layout',
+    standalone: false,
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
@@ -26,3 +26,4 @@ export class LayoutComponent implements OnInit {
     this.loginService.logout();
   }
 }
+

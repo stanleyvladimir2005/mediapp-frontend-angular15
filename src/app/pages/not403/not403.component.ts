@@ -3,7 +3,7 @@ import {JwtHelperService} from "@auth0/angular-jwt";
 import {environment} from "../../../environments/environment";
 
 @Component({
-  selector: 'app-not43',
+    standalone: false,
   templateUrl: './not403.component.html',
   styleUrls: ['./not403.component.css']
 })
@@ -17,3 +17,4 @@ export class Not403Component implements OnInit {
     this.username = decodedToken.sub;
   }
 }
+

@@ -5,7 +5,7 @@ import {Patient} from "../../../model/patient";
 import {PatientService} from "../../../service/patient.service";
 
 @Component({
-  selector: 'app-patient-dialog',
+    standalone: false,
   templateUrl: './patient-dialog.component.html',
   styleUrls: ['./patient-dialog.component.css']
 })
@@ -47,3 +47,4 @@ export class PatientDialogComponent implements OnInit {
     this._dialogRef.close();
   }
 }
+

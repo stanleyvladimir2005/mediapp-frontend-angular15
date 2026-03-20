@@ -10,7 +10,7 @@ import {PatientDialogComponent} from "./patient-dialog/patient-dialog.component"
 import {MatDialog} from "@angular/material/dialog";
 
 @Component({
-  selector: 'app-patient',
+    standalone: false,
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css']
 })
@@ -69,3 +69,4 @@ export class PatientComponent implements OnInit{
     });
   }
 }
+

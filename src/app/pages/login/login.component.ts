@@ -5,7 +5,7 @@ import '../../../assets/login-animation.js';
 import {environment} from "../../../environments/environment";
 
 @Component({
-  selector: 'app-login',
+    standalone: false,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -36,3 +36,4 @@ export class LoginComponent implements OnInit {
     (window as any).initialize();
   }
 }
+

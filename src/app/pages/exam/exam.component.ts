@@ -10,7 +10,7 @@ import {switchMap} from "rxjs";
 import {ExamDialogComponent} from "./exam-dialog/exam-dialog.component";
 
 @Component({
-  selector: 'app-exam',
+    standalone: false,
   templateUrl: './exam.component.html',
   styleUrls: ['./exam.component.css']
 })
@@ -70,3 +70,4 @@ export class ExamComponent implements OnInit {
     ;
   }
 }
+

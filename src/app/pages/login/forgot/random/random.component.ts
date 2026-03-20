@@ -4,7 +4,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 import {LoginService} from "../../../../service/login.service";
 
 @Component({
-  selector: 'app-random',
+    standalone: false,
   templateUrl: './random.component.html',
   styleUrls: ['./random.component.css']
 })
@@ -78,3 +78,4 @@ export class RandomComponent implements OnInit{
     });
   }
 }
+

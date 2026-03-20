@@ -7,7 +7,7 @@ import {PatientService} from "../../../service/patient.service";
 import {Patient} from "../../../model/patient";
 
 @Component({
-  selector: 'app-sing-dialog',
+    standalone: false,
   templateUrl: './sing-dialog.component.html',
   styleUrls: ['./sing-dialog.component.css']
 })
@@ -59,3 +59,4 @@ export class SingDialogComponent implements OnInit {
     this._dialogRef.close();
   }
 }
+

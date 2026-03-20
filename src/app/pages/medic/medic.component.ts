@@ -10,7 +10,7 @@ import {MedicService} from "../../service/medic.service";
 import {MedicDialogComponent} from "./medic-dialog/medic-dialog.component";
 
 @Component({
-  selector: 'app-medic',
+    standalone: false,
   templateUrl: './medic.component.html',
   styleUrls: ['./medic.component.css']
 })
@@ -69,3 +69,4 @@ export class MedicComponent implements OnInit {
       });
   }
 }
+

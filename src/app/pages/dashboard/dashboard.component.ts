@@ -4,7 +4,7 @@ import {MenuService} from "../../service/menu.service";
 import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Component({
-  selector: 'app-dashboard',
+    standalone: false,
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -27,3 +27,4 @@ export class DashboardComponent implements OnInit{
     });
   }
 }
+

@@ -11,7 +11,7 @@ import {SingDialogComponent} from "./sing-dialog/sing-dialog.component";
 import {PatientDialogComponent} from "../patient/patient-dialog/patient-dialog.component";
 
 @Component({
-  selector: 'app-sing',
+    standalone: false,
   templateUrl: './sing.component.html',
   styleUrls: ['./sing.component.css']
 })
@@ -78,3 +78,4 @@ export class SingComponent implements OnInit {
     });
   }
 }
+

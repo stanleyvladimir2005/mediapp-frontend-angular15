@@ -4,7 +4,7 @@ import { Consult } from 'src/app/model/consult';
 import { ConsultService } from 'src/app/service/consult.service';
 
 @Component({
-  selector: 'app-search-dialog',
+    standalone: false,
   templateUrl: './search-dialog.component.html',
   styleUrls: ['./search-dialog.component.css']
 })
@@ -31,3 +31,4 @@ export class SearchDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 }
+
